@@ -1,10 +1,10 @@
 import './App.css'
-
+import Container from './components/Container/Container.jsx'
 function App() {
 
   return (
     <>
-      <container/>
+      <Container/>
     </>
   )
 }
