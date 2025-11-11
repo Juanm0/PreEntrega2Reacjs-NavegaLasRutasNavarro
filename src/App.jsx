@@ -1,11 +1,23 @@
 import './App.css'
-import Container from './components/Container/Container.jsx'
+import { BrowserRouter, Routes, Route } from "react-router";
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail';
+import CartDetail from './pages/CartDetail';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+
 function App() {
 
   return (
-    <>
-      <Container/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<NotFound/>}/>
+        <Route path="/" element={<Products/>}/>
+        <Route path="/product-detail/:productId" element={<ProductDetail/>}/>
+        <Route path="/cart-detail" element={<CartDetail/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
