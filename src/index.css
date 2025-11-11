@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+body {
+  background: #030303;
+  background: radial-gradient(
+    circle,
+    rgba(3, 3, 3, 1) 0%,
+    rgba(18, 18, 61, 1) 35%,
+    rgba(5, 16, 18, 1) 100%
+  );
+  min-height: 100vh;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
