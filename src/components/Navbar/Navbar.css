@@ -1,36 +1,59 @@
-.navbar-container{
-    display: flex;
-    background-color: blue;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap:30px
-}
-
-.links{
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 10px;
-
-}
-
-.link{
-    color: white;
-    cursor: pointer;
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #111;
+  color: white;
 }
 
 .navbar-icon{
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
 }
 
-a{
+.links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.link a {
+  color: white;
   text-decoration: none;
-  color: inherit;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  color: #ffb400;
 }
