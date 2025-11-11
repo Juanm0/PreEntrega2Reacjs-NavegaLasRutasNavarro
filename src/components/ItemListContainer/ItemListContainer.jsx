@@ -1,6 +1,34 @@
+import { useEffect, useState } from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import './ItemListContainer.css'
+
+function ItemListContainer () {
+
+    const [products,setProducts] = useState([])
+
+    useEffect(()=>{
+        ( async()=>{
+            try {
+                const response = await fetch('../../../public/products.json')
+                const data = await response.json()
+                setProducts(data)
+            } catch (error) {
+                console.log(error)
+            }
+        })()
+
+    },[])
 
 
-
-function ItemListContainer(){
-    
+    return (
+        <div className='itemListContainer'>
+            {
+                products.map((product)=>{
+                   return <ItemDetail key={product.id} product={product}/>
+                })
+            }
+        </div>
+    )
 }
+
+export default ItemListContainer

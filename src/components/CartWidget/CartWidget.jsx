@@ -1,12 +1,10 @@
 import './CartWidget.css'
-import {ShoppingCart} from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 
-function CartWidget(){
-    return (
-        <button className='cartWidget'I>
-            <ShoppingCart className='shoppingCart'/>
-        </button>
-    )
+function CartWidget () {
+    return (<button className='cartWidget'>
+                <ShoppingCart className='shoppingCart' />
+            </button>)
 }
 
 export default CartWidget
