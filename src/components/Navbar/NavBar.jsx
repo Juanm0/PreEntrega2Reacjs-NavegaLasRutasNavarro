@@ -12,8 +12,7 @@ function Navbar() {
 
   return (
     <div className='navbar-container'>
-      <img
-        className='navbar-icon' src='./src/assets/nike-logo.png' alt='Logo'/>
+      <img className='navbar-icon' src='./src/assets/nike-logo.png' alt='Logo'/>
       <nav className='navbar'>
         <ul className='links'>
           <li className='link'>
@@ -22,7 +21,7 @@ function Navbar() {
 
           <li className='link dropdown'>
             <button className='dropdown-btn' onClick={toggleMenu}>
-              Categorias
+              Categoras
             </button>
             {menuOpen && (
               <ul className='dropdown-menu'>
