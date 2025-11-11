@@ -6,7 +6,7 @@ import './Navbar.css'
 function Navbar (){
     return (
                 <div className='navbar-container'>
-                    <img className='navbar-icon' src='./src/assets/trash-icon.png'/>
+                    <img className='navbar-icon' src='./src/assets/nike-logo.png'/>
                     <nav className='navbar'>
                         
                         <ul className='links'>
