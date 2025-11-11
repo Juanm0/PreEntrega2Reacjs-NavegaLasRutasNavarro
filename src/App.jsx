@@ -10,26 +10,14 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <BrowserRouter>
-      {}
       <Navbar />
 
       <Routes>
-        {}
         <Route path="/" element={<ItemListContainer />} />
-
-        {}
         <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
-
-        {}
         <Route path="/product-detail/:productId" element={<ProductDetail />} />
-
-        {}
         <Route path="/cart-detail" element={<CartDetail />} />
-
-        {}
         <Route path="/contact" element={<Contact />} />
-
-        {}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
