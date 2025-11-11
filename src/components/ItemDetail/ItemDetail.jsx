@@ -18,6 +18,7 @@ function ItemDetail ({product}) {
     return (
         <div className="itemDetail">
             <h3 className='itemDetail-title'>{product.title}</h3>
+            <img src={product.image} alt={product.description} />
             <p className='itemDetail-description'>{product.description}</p>
             <ItemCount stock={product.stock}/>
             <span>{product.price} $ ARG</span>

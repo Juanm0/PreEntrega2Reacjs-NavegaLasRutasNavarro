@@ -1,9 +1,10 @@
+import { NavLink } from 'react-router'
 import './CartWidget.css'
 import { ShoppingCart } from 'lucide-react'
 
 function CartWidget () {
     return (<button className='cartWidget'>
-                <ShoppingCart className='shoppingCart' />
+                <NavLink to="/cart-detail"><ShoppingCart className='shoppingCart' /></NavLink>
             </button>)
 }
 

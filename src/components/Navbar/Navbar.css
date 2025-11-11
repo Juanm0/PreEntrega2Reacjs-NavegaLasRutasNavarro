@@ -22,6 +22,7 @@
 
 .link{
     color: white;
+    cursor: pointer;
 }
 
 .navbar-icon{
@@ -29,7 +30,7 @@
     height: 32px;
 }
 
-a, Link {
+a{
   text-decoration: none;
   color: inherit;
 }

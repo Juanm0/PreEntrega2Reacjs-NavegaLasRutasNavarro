@@ -9,7 +9,7 @@ function ItemListContainer () {
     useEffect(()=>{
         ( async()=>{
             try {
-                const response = await fetch('../../../public/products.json')
+                const response = await fetch('/products.json')
                 const data = await response.json()
                 setProducts(data)
             } catch (error) {
