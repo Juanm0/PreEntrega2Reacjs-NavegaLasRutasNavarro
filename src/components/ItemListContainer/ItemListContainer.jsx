@@ -1,34 +1,49 @@
-import { useEffect, useState } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import './ItemListContainer.css'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import './ItemListContainer.css';
 
-function ItemListContainer () {
+function ItemListContainer() {
+  const { categoriaId } = useParams();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const [products,setProducts] = useState([])
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/products.json');
+        const data = await response.json();
 
-    useEffect(()=>{
-        ( async()=>{
-            try {
-                const response = await fetch('/products.json')
-                const data = await response.json()
-                setProducts(data)
-            } catch (error) {
-                console.log(error)
-            }
-        })()
+  
+        const filtered = categoriaId
+          ? data.filter((product) => product.category === categoriaId)
+          : data;
 
-    },[])
+        setProducts(filtered);
+      } catch (error) {
+        console.error('Error al cargar los productos:', error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [categoriaId]);
 
+  if (loading) {
+    return <p className="loading">Cargando productos...</p>;
+  }
 
-    return (
-        <div className='itemListContainer'>
-            {
-                products.map((product)=>{
-                   return <ItemDetail key={product.id} product={product}/>
-                })
-            }
-        </div>
-    )
+  return (
+    <div className="itemListContainer">
+      {products.length > 0 ? (
+        products.map((product) => (
+          <ItemDetail key={product.id} product={product} />
+        ))
+      ) : (
+        <p>No hay productos en esta categoría.</p>
+      )}
+    </div>
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
