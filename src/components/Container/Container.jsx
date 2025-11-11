@@ -1,12 +1,12 @@
+/* import ItemListContainer from "./ItemListContainer/ItemListContainer"
 import Navbar from "../Navbar/Navbar.jsx"
 
 function Container (){
     return (
         <div>
-            <Navbar>
-                 
-            </Navbar>
+            <Navbar/>
+            <ItemListContainer/>
         </div>
     )
 }
-export default Container
+export default Container */
