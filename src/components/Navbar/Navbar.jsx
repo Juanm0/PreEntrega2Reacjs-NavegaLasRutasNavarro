@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <div className='navbar-container'>
-      <img className='navbar-icon' src='./src/assets/nike-logo.png' alt='Logo'/>
+      <img className='navbar-icon' src='/nike-logo.png' alt='Logo'/>
       <nav className='navbar'>
         <ul className='links'>
           <li className='link'>

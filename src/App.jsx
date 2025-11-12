@@ -13,12 +13,13 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
         <Route path="/product-detail/:productId" element={<ProductDetail />} />
         <Route path="/cart-detail" element={<CartDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
+        
       </Routes>
     </BrowserRouter>
   );
