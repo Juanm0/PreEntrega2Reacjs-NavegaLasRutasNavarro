@@ -6,8 +6,14 @@ import './Navbar.css'
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+
+  
+  document.onclick = (e) => {
+    
+    if (!e.target.closest('.dropdown')) {
+      setMenuOpen(false)
+    }
   }
 
   return (
@@ -21,7 +27,7 @@ function Navbar() {
 
           <li className='link dropdown'>
             <button className='dropdown-btn' onClick={toggleMenu}>
-              Categoras
+              Categorías
             </button>
             {menuOpen && (
               <ul className='dropdown-menu'>
